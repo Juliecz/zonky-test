@@ -4,7 +4,7 @@ import './style.less';
 
 const Header = () => (
   <div className="header">
-    Header
+    <div className="header-img" />
   </div>
 );
 

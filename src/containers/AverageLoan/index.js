@@ -1,33 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Ratings from '../../components/Ratings';
 import config from '../../config';
+import Ratings from '../../components/Ratings';
+import Result from '../../components/Result';
+import { selectRating } from '../../model/actions';
 
-const AverageLoan = ({ ratings, selectedRating }) => {
-  const onClick = (id) => { console.log('rating id', id); };
+import './style.less';
+
+const AverageLoan = ({ ratings, selectedRating, selectRating, loansState, amount }) => {
+  const onClickRating = (id) => { selectRating(id) };
+
   return (
     <div className="averageloan">
-      Průměrná výše půjček
+      <h1 className="averageloan-header">
+        Průměrná výše půjček
+      </h1>
+
       <Ratings
         ratings={ratings}
-        onClick={onClick}
+        onClick={onClickRating}
         selectedRating={selectedRating}
+      />
+      
+      <Result
+        amount={amount}
+        loansState={loansState}
       />
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log('state', state);
-  return {
-    ratings: config.ratings,
-    selectedRating: state.selectedRating,
-  };
-};
-
-const mapDispatchToProps = () => ({
-
+const mapStateToProps = (state) => ({
+  ratings: config.ratings,
+  selectedRating: state.selectedRating,
+  loansState: state.loansState,
+  amount: state.averageAmount,
 });
 
-export default connect(mapStateToProps, {})(AverageLoan);
+export default connect(
+  mapStateToProps, { selectRating }
+)(AverageLoan);

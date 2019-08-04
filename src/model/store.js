@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-// import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import reducer from './reducer';
 
 const composeEnchancers =
@@ -7,7 +7,7 @@ const composeEnchancers =
 
 const store = createStore(
   reducer,
-  // composeEnchancers(applyMiddleware(logger))
+  composeEnchancers(applyMiddleware(thunk))
 );
 
 export default store;

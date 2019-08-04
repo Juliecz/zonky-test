@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Rating from '../Rating';
+import './style.less';
 
 const Ratings = ({ ratings, selectedRating, onClick }) => (
   <div className="ratings">

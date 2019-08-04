@@ -1,6 +1,5 @@
 export default {
-  baseUrl: 'https://private-anon-8fef23d067-zonky.apiary-mock.com',
-  marketplace: '/loans/marketplace',
+  url: `${(process.env.API_SERVER || 'http://localhost:3001') + '/loans/marketplace?fields=amount'}`,
   ratings: [
     { id: 'AAAAA', name: 'A**' },
     { id: 'AAAA', name: 'A*' },
