@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import config from '../../config';
-import Ratings from '../../components/Ratings';
-import Result from '../../components/Result';
+import Ratings from '../Ratings';
+import Result from '../Result';
 import { selectRating } from '../../model/actions';
 
 import './style.less';
