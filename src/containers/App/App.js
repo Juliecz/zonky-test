@@ -1,26 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import Header from '../../components/Header';
 import AverageLoan from '../AverageLoan';
-
-import * as actions from '../../model/actions';
-
 import './style.less';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="app">
-        <Header />
-        <AverageLoan />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="app">
+    <div className="header">
+      <div className="header-img" />
+    </div>
 
-const mapStateToProps = (state) => ({});
+    <AverageLoan />
+  </div>
+);
 
-const mapDispatchToProps = (dispatch) => ({ });
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

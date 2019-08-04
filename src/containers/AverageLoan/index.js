@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import config from '../../config';
 import Ratings from '../../components/Ratings';
@@ -29,6 +30,14 @@ const AverageLoan = ({ ratings, selectedRating, selectRating, loansState, amount
       />
     </div>
   );
+};
+
+AverageLoan.propTypes = {
+  ratings: PropTypes.array.isRequired,
+  selectedRating: PropTypes.string,
+  loansState: PropTypes.string.isRequired,
+  amount: PropTypes.number,
+  selectRating: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

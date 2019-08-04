@@ -1,5 +1,7 @@
 import React from 'react';
-import { BeatLoader } from "react-spinners";
+import { BeatLoader } from 'react-spinners';
+import PropTypes from 'prop-types';
+
 import { formatCurrency } from '../../helpers/averageAmount';
 import './style.less';
 
@@ -11,12 +13,17 @@ const Result = ({ loansState, amount }) => {
       </div>
     );
   }
-  
+
   return (
     <div className="result">
       {amount && <h2>{ formatCurrency(amount) }</h2>}
     </div>
   );
+};
+
+Result.propTypes = {
+  loansState: PropTypes.string.isRequired,
+  amount: PropTypes.number,
 };
 
 export default Result;

@@ -38,7 +38,7 @@ app.get('/*', (req, res) => {
     .catch(err => res.sendStatus(500));
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PROXY_SERVER_PORT || 3001;
 
 app.listen(port);
 
