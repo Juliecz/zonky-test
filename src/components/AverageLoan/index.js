@@ -9,7 +9,7 @@ import { selectRating } from '../../model/actions';
 
 import './style.less';
 
-const AverageLoan = ({ ratings, selectedRating, selectRating, loansState, amount }) => {
+const AverageLoan = ({ ratings, selectedRating, selectRating, loansState, amount, error }) => {
   const onClickRating = (id) => { selectRating(id) };
 
   return (
@@ -27,6 +27,7 @@ const AverageLoan = ({ ratings, selectedRating, selectRating, loansState, amount
       <Result
         amount={amount}
         loansState={loansState}
+        error={error}
       />
     </div>
   );
@@ -38,6 +39,7 @@ AverageLoan.propTypes = {
   loansState: PropTypes.string.isRequired,
   amount: PropTypes.number,
   selectRating: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
@@ -45,6 +47,7 @@ const mapStateToProps = (state) => ({
   selectedRating: state.selectedRating,
   loansState: state.loansState,
   amount: state.averageAmount,
+  error: state.error,
 });
 
 export default connect(

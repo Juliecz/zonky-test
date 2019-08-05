@@ -28,7 +28,7 @@ export const selectRating = (value) => (dispatch, getState) => {
       dispatch(fetchRatingSuccess(res));
       dispatch(setAverageLoan(averageAmount(res)));
     })
-    .catch(() => dispatch(fetchRatingError()));
+    .catch(() => dispatch(fetchRatingError('Please try again')));
 };
 
 export const setRating = (value) => ({
@@ -45,8 +45,9 @@ export const fetchRatingSuccess = (value) => ({
   payload: value,
 });
 
-export const fetchRatingError = () => ({
+export const fetchRatingError = (value) => ({
   type: FETCH_RATING_ERROR,
+  payload: value,
 });
 
 export const setTotalAmount = (value) => ({

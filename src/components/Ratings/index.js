@@ -20,8 +20,7 @@ const Ratings = ({ ratings, selectedRating, onClick }) => (
 Ratings.propTypes = {
   ratings: PropTypes.array.isRequired,
   selectedRating: PropTypes.string,
-  loansState: PropTypes.string.isRequired,
-  amount: PropTypes.number,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Ratings;

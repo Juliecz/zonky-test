@@ -39,6 +39,7 @@ const app = (state = defaultState, action) => {
       return {
         ...state,
         loansState: 'error',
+        error: action.payload,
       }
     }
     case SET_TOTAL_AMOUNT: {

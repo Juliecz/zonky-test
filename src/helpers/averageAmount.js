@@ -1,12 +1,11 @@
 export const averageAmount = (loans) => {
-  let amount = loans.reduce((sum, loan) => sum+loan.amount, 0);
+  let amount = loans.reduce((sum, loan) => sum + loan.amount, 0);
   
-  amount = Math.round(amount/loans.length);
-  return amount;
+  return Math.round(amount / loans.length);
 };
 
-export const formatCurrency = (currency) => {
-  if (!currency) {
+export const formatCurrency = (number) => {
+  if (!number) {
     return null;
   }
   
@@ -17,5 +16,5 @@ export const formatCurrency = (currency) => {
       currency: 'CZK',
       maximumSignificantDigits: 10
     })
-    .format(currency)
+    .format(number)
 };

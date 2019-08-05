@@ -19,7 +19,7 @@ const Rating = ({ id, selectedId, name, onClick }) => {
 
 Rating.propTypes = {
   id: PropTypes.string.isRequired,
-  selectedId: PropTypes.string.isRequired,
+  selectedId: PropTypes.string,
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };

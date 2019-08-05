@@ -1,5 +1,5 @@
 export default async function fetchData(url, total, rating, method = 'GET') {
-  const response = await fetch(
+  return await fetch(
     url,
     {
       method,
@@ -8,6 +8,4 @@ export default async function fetchData(url, total, rating, method = 'GET') {
       },
     },
   );
-
-  return response;
 }
