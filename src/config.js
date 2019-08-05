@@ -1,3 +1,4 @@
+console.log('ENV', process.env);
 export default {
   url: `${(process.env.PROXY_SERVER || 'http://localhost:3001') + '/loans/marketplace?fields=amount'}`,
   ratings: [
